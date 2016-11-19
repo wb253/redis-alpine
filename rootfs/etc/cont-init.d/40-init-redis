@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv sh
+
+# Init config
+if [ ! -f /etc/redis/redis.conf ]; then
+    mkdir -p /etc/redis
+    cp /opt/redis/redis.conf /etc/redis/redis.conf
+    chmod 640 /etc/redis/redis.conf
+    sed -i 's/<<password>>/'"${REDIS_PASSWORD}"'/' /etc/redis/redis.conf
+fi
