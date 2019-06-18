@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM wb253/alpine:latest
 
 RUN addgroup -S redis && adduser -S -G redis redis
 
